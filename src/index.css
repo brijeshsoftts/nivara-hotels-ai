@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --background: #121315;
+  --foreground: #fbf8f3;
+
+  --card: #1a1b1e;
+  --card-foreground: #fbf8f3;
+
+  --popover: #1a1b1e;
+  --popover-foreground: #fbf8f3;
+
+  --primary: #ffd6c4;
+  --primary-foreground: #121315;
+
+  --secondary: #242528;
+  --secondary-foreground: #fbf8f3;
+
+  --muted: #1f2023;
+  --muted-foreground: #c8c2b7;
+
+  --accent: #2c2d31;
+  --accent-foreground: #ffd6c4;
+
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.12);
+  --ring: #ffd6c4;
+
+  --radius: 1rem;
+}
+
+.light {
+  --background: #fbf8f3;
+  --foreground: #121315;
+
+  --card: #ffffff;
+  --card-foreground: #121315;
+
+  --popover: #ffffff;
+  --popover-foreground: #121315;
+
+  --primary: #121315;
+  --primary-foreground: #ffd6c4;
+
+  --secondary: #f0ece1;
+  --secondary-foreground: #121315;
+
+  --muted: #f4efe6;
+  --muted-foreground: #6e6a62;
+
+  --accent: #f0ece1;
+  --accent-foreground: #121315;
+
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+
+  --border: rgba(18, 19, 21, 0.1);
+  --input: rgba(18, 19, 21, 0.12);
+  --ring: #121315;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--background);
+    color: var(--foreground);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Custom luxury arch shapes and borders */
+.arch-top {
+  border-top-left-radius: 9999px;
+  border-top-right-radius: 9999px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.arch-full {
+  border-radius: 9999px;
+}
+
+.arch-soft-top {
+  border-top-left-radius: 140px;
+  border-top-right-radius: 140px;
+}
+
+/* Double-ring border effect using semantic tokens */
+.double-ring {
+  box-shadow: 0 0 0 1px var(--primary), 0 0 0 5px var(--background), 0 0 0 6px var(--border);
+}
+
+.double-ring-subtle {
+  box-shadow: 0 0 0 1px var(--border), 0 0 0 4px var(--card), 0 0 0 5px var(--primary);
+}
+
+/* Glassmorphism overlays using semantic tokens */
+.glass-nav {
+  background-color: color-mix(in srgb, var(--background) 85%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-card {
+  background-color: color-mix(in srgb, var(--card) 70%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Custom scrollbar using semantic tokens */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--muted);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}

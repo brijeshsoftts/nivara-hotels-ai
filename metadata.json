@@ -1,0 +1,6 @@
+{
+  "name": "Nivara Hotels",
+  "description": "A refined stay, thoughtfully designed. Premium luxury boutique hospitality.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
